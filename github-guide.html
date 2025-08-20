@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Forest CTF - README Guide</title>
+    <title>Upload CTF to GitHub - Complete Guide</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -71,7 +71,7 @@
             flex-wrap: wrap;
         }
         
-        .ctf-icon {
+        .github-icon {
             font-size: 3.5rem;
             color: #00ffcc;
             text-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
@@ -135,12 +135,6 @@
             border-radius: 4px;
         }
         
-        .flag {
-            color: #00ff95;
-            font-weight: bold;
-            font-family: 'Courier New', monospace;
-        }
-        
         .tip {
             background: rgba(42, 127, 255, 0.1);
             border-left: 4px solid #2a7fff;
@@ -170,14 +164,28 @@
             border-radius: 5px;
             overflow-x: auto;
             border: 1px solid #2a7fff;
+            font-family: 'Courier New', monospace;
         }
         
-        footer {
+        .code-block code {
+            display: block;
+            white-space: pre-wrap;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #2a7fff;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
             text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            border-top: 1px solid #2a7fff;
-            color: #7f8c8d;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
         }
         
         .btn {
@@ -190,10 +198,73 @@
             font-weight: bold;
             margin: 10px 5px;
             transition: background 0.3s;
+            cursor: pointer;
+            border: none;
         }
         
         .btn:hover {
             background: #1a5bbf;
+        }
+        
+        .btn-secondary {
+            background: #00cc99;
+        }
+        
+        .btn-secondary:hover {
+            background: #00aa77;
+        }
+        
+        .upload-interface {
+            background: rgba(30, 30, 50, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 1px solid #2a7fff;
+        }
+        
+        .file-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .file-list li {
+            padding: 10px;
+            border-bottom: 1px solid #2a7fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .file-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .file-icon {
+            color: #2a7fff;
+            margin-right: 10px;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00ffcc, #2a7fff);
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #2a7fff;
+            color: #7f8c8d;
         }
         
         @media (max-width: 768px) {
@@ -211,176 +282,203 @@
     <div class="container">
         <header>
             <div class="header-content">
-                <i class="fas fa-tree ctf-icon"></i>
-                <h1>Cyber Forest CTF Challenge</h1>
-                <i class="fas fa-terminal ctf-icon"></i>
+                <i class="fab fa-github github-icon"></i>
+                <h1>Upload CTF to GitHub</h1>
+                <i class="fas fa-cloud-upload-alt github-icon"></i>
             </div>
-            <p class="intro">Welcome to the Cyber Forest CTF! Your mission is to navigate through a digital filesystem, find hidden flags, and avoid malicious files.</p>
+            <p class="intro">A complete guide to uploading your Cyber Forest CTF project to GitHub</p>
         </header>
         
-        <h2>🌲 Challenge Overview</h2>
-        <p>You are a cyber explorer lost in a digital forest. Your goal is to navigate through a maze of files and find three hidden flags. But beware: this forest is full of traps! Some files are malicious and will temporarily disable your terminal if you open them.</p>
-        
-        <div class="warning">
-            <p><i class="fas fa-exclamation-triangle warning-icon"></i> <strong>WARNING:</strong> Some files are malicious! If you open them, your terminal will be disabled for 10 seconds and you'll see a scary (but harmless) virus animation.</p>
-        </div>
-        
-        <h2>🎮 How to Play</h2>
-        <p>Click on the website link provided by your instructor to start the challenge. You will see a terminal interface in your web browser.</p>
-        
-        <h3>Available Commands:</h3>
-        <div class="grid">
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-list card-icon"></i>
-                    <h3>ls</h3>
-                </div>
-                <p>Lists files in the current or specified directory.</p>
-                <div class="command">ls Documents/</div>
+        <div class="section">
+            <h2><span class="step-number">1</span> Create a GitHub Account</h2>
+            <p>If you don't already have a GitHub account, you'll need to create one to upload your project.</p>
+            
+            <div class="tip">
+                <p><i class="fas fa-lightbulb tip-icon"></i> <strong>Pro Tip:</strong> Choose a username that represents you professionally as you may use GitHub for future projects too.</p>
             </div>
             
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-folder card-icon"></i>
-                    <h3>cd</h3>
-                </div>
-                <p>Changes to a different directory.</p>
-                <div class="command">cd Documents/</div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-file card-icon"></i>
-                    <h3>cat</h3>
-                </div>
-                <p>Displays the contents of a file.</p>
-                <div class="command">cat note.txt</div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-info-circle card-icon"></i>
-                    <h3>file</h3>
-                </div>
-                <p>Reveals the true type of a file.</p>
-                <div class="command">file mystery.exe</div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-broom card-icon"></i>
-                    <h3>clear</h3>
-                </div>
-                <p>Clears your terminal screen.</p>
-                <div class="command">clear</div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-question-circle card-icon"></i>
-                    <h3>help</h3>
-                </div>
-                <p>Shows available commands.</p>
-                <div class="command">help</div>
+            <div class="code-block">
+                <p>1. Go to <a href="https://github.com/" style="color: #00ffcc;">github.com</a></p>
+                <p>2. Click "Sign up" in the top right corner</p>
+                <p>3. Enter your details and create your account</p>
+                <p>4. Verify your email address</p>
             </div>
         </div>
         
-        <h2>🏁 The Flags</h2>
-        <p>There are three flags hidden in the system. Each flag is a string that looks like this: <span class="flag">CTF{something_here}</span>.</p>
+        <div class="section">
+            <h2><span class="step-number">2</span> Create a New Repository</h2>
+            <p>A repository is where your project files will be stored on GitHub.</p>
+            
+            <div class="code-block">
+                <p>1. Click the "+" icon in the top right and select "New repository"</p>
+                <p>2. Name your repository (e.g., "cyber-forest-ctf")</p>
+                <p>3. Add a description: "A cybersecurity capture the flag challenge"</p>
+                <p>4. Choose Public (so others can see it)</p>
+                <p>5. Initialize with a README (important!)</p>
+                <p>6. Add .gitignore: Select "Node" if you have JavaScript files</p>
+                <p>7. Choose a license if you want</p>
+                <p>8. Click "Create repository"</p>
+            </div>
+        </div>
         
-        <div class="grid">
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-flag card-icon"></i>
-                    <h3>Flag 1</h3>
+        <div class="section">
+            <h2><span class="step-number">3</span> Prepare Your Files</h2>
+            <p>Organize your CTF project files before uploading.</p>
+            
+            <div class="upload-interface">
+                <h3>Your CTF Project Structure</h3>
+                <ul class="file-list">
+                    <li><span><i class="fas fa-file-code file-icon"></i> index.html</span> <span class="success">Main file</span></li>
+                    <li><span><i class="fas fa-file-code file-icon"></i> style.css</span> <span class="success">Styles</span></li>
+                    <li><span><i class="fas fa-file-code file-icon"></i> script.js</span> <span class="success">JavaScript</span></li>
+                    <li><span><i class="fas fa-file-image file-icon"></i> images/</span> <span class="success">Folder</span></li>
+                    <li><span><i class="fas fa-file-alt file-icon"></i> README.md</span> <span class="success">Documentation</span></li>
+                </ul>
+                
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
                 </div>
-                <p>Hidden in a file most people ignore.</p>
-                <p class="success"><i class="fas fa-lightbulb"></i> Hint: Look for hidden files!</p>
+                
+                <button class="btn" onclick="startUpload()"><i class="fas fa-upload"></i> Simulate Upload</button>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><span class="step-number">4</span> Upload Using Git Commands</h2>
+            <p>The best way to upload your project is using Git commands in the terminal.</p>
+            
+            <div class="warning">
+                <p><i class="fas fa-exclamation-triangle warning-icon"></i> <strong>Important:</strong> You need to have Git installed on your computer for these commands to work.</p>
             </div>
             
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-flag card-icon"></i>
-                    <h3>Flag 2</h3>
-                </div>
-                <p>In a place where documents are stored.</p>
-                <p class="success"><i class="fas fa-lightbulb"></i> Hint: Check common document directories!</p>
+            <div class="code-block">
+                <code># Navigate to your project folder
+cd cyber-forest-ctf
+
+# Initialize Git
+git init
+
+# Add all files to be tracked
+git add .
+
+# Commit your files
+git commit -m "Initial commit of Cyber Forest CTF"
+
+# Add the GitHub repository as origin
+git remote add origin https://github.com/your-username/your-repo-name.git
+
+# Push your code to GitHub
+git branch -M main
+git push -u origin main</code>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><span class="step-number">5</span> Alternative: Drag and Drop</h2>
+            <p>If you're not comfortable with Git commands, you can drag and drop files directly to GitHub.</p>
+            
+            <div class="code-block">
+                <p>1. Go to your repository on GitHub</p>
+                <p>2. Click "Add file" → "Upload files"</p>
+                <p>3. Drag and drop your project folder</p>
+                <p>4. Add a commit message</p>
+                <p>5. Click "Commit changes"</p>
             </div>
             
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-flag card-icon"></i>
-                    <h3>Flag 3</h3>
-                </div>
-                <p>Hidden within an image's metadata.</p>
-                <p class="success"><i class="fas fa-lightbulb"></i> Hint: Use the right tools to examine files!</p>
+            <div class="tip">
+                <p><i class="fas fa-lightbulb tip-icon"></i> <strong>Pro Tip:</strong> The drag and drop method is easier for beginners, but learning Git commands will help you in the long run.</p>
             </div>
         </div>
         
-        <h2>⚠️ Avoiding Traps</h2>
-        <p>Be careful with files in the <span class="flag">Downloads/</span> and <span class="flag">bin/</span> directories. These are more likely to contain malicious files.</p>
-        
-        <div class="tip">
-            <p><i class="fas fa-lightbulb tip-icon"></i> <strong>Pro Tip:</strong> Use the <span class="flag">file</span> command before opening any file to check what type of file you're dealing with.</p>
-        </div>
-        
-        <h2>🏆 Winning the Challenge</h2>
-        <p>The first player to find all three flags wins! The challenge tracks your completion time.</p>
-        
-        <div class="tip">
-            <p><i class="fas fa-lightbulb tip-icon"></i> <strong>Pro Tip:</strong> The flags are not always in obvious places. Look for hidden files and think about where you might hide something valuable.</p>
-        </div>
-        
-        <h2>🆘 Need Help?</h2>
-        <p>If you get stuck, try these strategies:</p>
-        <ul>
-            <li>Use <span class="flag">ls -a</span> to see hidden files (those starting with a <span class="flag">.</span>)</li>
-            <li>The <span class="flag">file</span> command is your best friend for avoiding traps</li>
-            <li>Check everywhere—even where it seems obvious</li>
-            <li>Remember: This is a simulation. No real systems are being harmed.</li>
-        </ul>
-        
-        <div class="code-block">
-            <p><strong>Example exploration:</strong></p>
-            <p>$ ls -a</p>
-            <p>. .. .hidden_file Documents Downloads</p>
-            <p>$ file .hidden_file</p>
-            <p>.hidden_file: ASCII text</p>
-            <p>$ cat .hidden_file</p>
-            <p>CTF{hidden_in_plain_sight}</p>
+        <div class="section">
+            <h2><span class="step-number">6</span> Set Up GitHub Pages</h2>
+            <p>Once your CTF is on GitHub, you can host it for free using GitHub Pages.</p>
+            
+            <div class="code-block">
+                <p>1. Go to your repository on GitHub</p>
+                <p>2. Click on "Settings"</p>
+                <p>3. Select "Pages" from the left sidebar</p>
+                <p>4. Under "Source", select "main" branch</p>
+                <p>5. Click "Save"</p>
+                <p>6. Wait a few minutes, then refresh the page</p>
+                <p>7. You'll see a link to your live website</p>
+            </div>
+            
+            <div class="tip">
+                <p><i class="fas fa-lightbulb tip-icon"></i> <strong>Pro Tip:</strong> Your website will be available at https://your-username.github.io/your-repo-name/</p>
+            </div>
         </div>
         
         <div style="text-align: center; margin: 30px 0;">
-            <a href="#" class="btn"><i class="fas fa-play"></i> Start Challenge</a>
-            <a href="#" class="btn"><i class="fas fa-book"></i> Full Documentation</a>
+            <button class="btn" onclick="showFinalMessage()"><i class="fas fa-check-circle"></i> Complete Setup</button>
+            <a href="#" class="btn btn-secondary"><i class="fab fa-github"></i> Go to GitHub</a>
+        </div>
+        
+        <div id="final-message" style="display: none;">
+            <div class="tip">
+                <p><i class="fas fa-rocket tip-icon"></i> <strong>Congratulations!</strong> Your CTF project is now on GitHub and live with GitHub Pages! Share your repository link with others so they can try your CTF challenge.</p>
+            </div>
         </div>
         
         <footer>
-            <p>Cyber Forest CTF Challenge &copy; 2023 | Good luck, explorer! The forest awaits... 🌲💻</p>
+            <p>GitHub Upload Guide &copy; 2023 | Cyber Forest CTF Challenge</p>
         </footer>
     </div>
 
     <script>
-        // Simple animation for the icons
+        // Simulate file upload progress
+        function startUpload() {
+            const progressBar = document.getElementById('progress');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    alert('Upload complete! Your CTF project has been uploaded to GitHub.');
+                } else {
+                    width += 5;
+                    progressBar.style.width = width + '%';
+                }
+            }, 100);
+        }
+        
+        // Show final message
+        function showFinalMessage() {
+            document.getElementById('final-message').style.display = 'block';
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+        
+        // Add interactive elements
         document.addEventListener('DOMContentLoaded', function() {
-            const ctfIcons = document.querySelectorAll('.ctf-icon');
-            ctfIcons.forEach(icon => {
-                icon.addEventListener('mouseover', () => {
-                    icon.style.transition = 'all 0.3s ease';
-                    icon.style.transform = 'scale(1.2)';
-                    icon.style.textShadow = '0 0 20px rgba(0, 255, 204, 0.8)';
+            const commands = document.querySelectorAll('.code-block');
+            commands.forEach(block => {
+                block.addEventListener('click', () => {
+                    const selection = window.getSelection();
+                    const range = document.createRange();
+                    range.selectNodeContents(block);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                    
+                    // Copy to clipboard
+                    try {
+                        document.execCommand('copy');
+                        const originalText = block.querySelector('p') ? block.querySelector('p').textContent : block.textContent;
+                        if (block.querySelector('p')) {
+                            block.querySelector('p').textContent = 'Copied to clipboard!';
+                        } else {
+                            block.textContent = 'Copied to clipboard!';
+                        }
+                        
+                        setTimeout(() => {
+                            if (block.querySelector('p')) {
+                                block.querySelector('p').textContent = originalText;
+                            } else {
+                                block.textContent = originalText;
+                            }
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy: ', err);
+                    }
                 });
-                
-                icon.addEventListener('mouseout', () => {
-                    icon.style.transform = 'scale(1)';
-                    icon.style.textShadow = '0 0 15px rgba(0, 255, 204, 0.7)';
-                });
-            });
-            
-            // Add blinking cursor effect to commands
-            const commands = document.querySelectorAll('.command');
-            commands.forEach(command => {
-                command.innerHTML = command.innerHTML + '<span class="blinking-cursor">|</span>';
             });
         });
     </script>
