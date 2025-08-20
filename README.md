@@ -98,5 +98,5 @@ When you find all four flags:
 
 Good luck, explorer! The forest awaits... 🌲💻
 
-**Live Challenge:** 🌐 [Play Now](https://cyber-forest-ctf.vercel.app)  
-**Source Code:** 💻 [GitHub Repository](https://github.com/SERGEON-network/cyber-forest-ctf)
+**Live Challenge:** 🌐 [Play Now](https://cyber-forest-ctf-chapter-02.vercel.app/)  
+**Source Code:** 💻 [GitHub Repository](https://github.com/SERGEON-network/cyber-forest-ctf-chapter-02/edit/main/README.md)
