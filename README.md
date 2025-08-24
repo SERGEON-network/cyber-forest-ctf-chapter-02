@@ -1,7 +1,6 @@
 # 🌲 Welcome to the Cyber Forest CTF Challenge! 🌲
 ![Uploading Lucid_Origin_A_fullbody_shot_of_a_confident_stylish_elite_male_0.jpg…]()
 
-
 ## 🎯 Your Mission
 
 You are a cyber explorer lost in a digital forest. Your goal is to navigate through a complex filesystem and find **four hidden flags**. But beware: this forest is full of traps! Some files are malicious and will temporarily disable your terminal if you open them.
